@@ -45,7 +45,7 @@ export function EcranTitre({ aUneSauvegarde, surDebut, surReprise, surRetour }: 
         <p className="sous">Escape 42</p>
         <h1>La Villa Nul</h1>
 
-        <div style={{ margin: '1.5rem 0', maxHeight: '200px', overflow: 'hidden' }}>
+        <div style={{ margin: '1.5rem 0', maxWidth: '100%', aspectRatio: '16/9' }}>
           <Illustration src="/pieces/01-villa-nuit.webp" alt="La villa, la nuit" />
         </div>
 
