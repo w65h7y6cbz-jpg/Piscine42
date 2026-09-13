@@ -29,6 +29,7 @@ export function Fin({ etat, surRecommencer, surMenu }: { etat: Etat; surRecommen
 
         <div style={{ maxWidth: '38rem', margin: '0 auto 2rem' }}>
           <Illustration
+            className="illustration-titre"
             src={evasion ? '/pieces/51-evasion.webp' : '/pieces/52-echec.webp'}
             alt={evasion ? 'La porte ouverte au petit matin' : 'Le hall au matin, porte close'}
           />
