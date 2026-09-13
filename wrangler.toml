@@ -1,0 +1,10 @@
+name = "escape42"
+compatibility_date = "2026-09-01"
+assets = { directory = "./dist" }
+
+[env.production]
+name = "escape42"
+
+[[env.production.routes]]
+pattern = "escape.lifepilot.win"
+custom_domain = true

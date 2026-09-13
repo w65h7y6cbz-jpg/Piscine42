@@ -1,0 +1,244 @@
+/* La Villa Nul : une maison la nuit. Ambre, brun, et le vert des écrans à tube. */
+:root {
+  --nuit: #0d0b09;
+  --nuit-claire: #171310;
+  --papier: #e8dcc8;
+  --papier-terne: #a99d8a;
+  --ambre: #d99d3f;
+  --ambre-vif: #f0b95c;
+  --tube: #6fd08c;
+  --sang: #b5462f;
+  --bord: #2e2620;
+
+  --serif: 'Iowan Old Style', 'Palatino Linotype', Palatino, Georgia, serif;
+  --mono: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--nuit);
+  color: var(--papier);
+  font-family: var(--serif);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--bord);
+  background: var(--nuit-claire);
+  color: var(--papier);
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  transition: border-color 120ms, color 120ms;
+}
+button:hover:not(:disabled) { border-color: var(--ambre); color: var(--ambre-vif); }
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.principal { border-color: var(--ambre); color: var(--ambre-vif); }
+
+/* ---------- Écran titre ---------- */
+.titre {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  background: radial-gradient(ellipse at 50% 40%, #1c1611 0%, var(--nuit) 70%);
+}
+.titre-contenu { max-width: 40rem; text-align: center; }
+.titre h1 {
+  font-size: clamp(2.4rem, 9vw, 4.5rem);
+  margin: 0 0 0.2em;
+  letter-spacing: 0.06em;
+  color: var(--ambre-vif);
+  font-weight: 400;
+}
+.titre .sous { color: var(--papier-terne); letter-spacing: 0.3em; text-transform: uppercase; font-size: 0.75rem; }
+.titre p { text-align: left; }
+.titre-actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 2rem; }
+
+/* ---------- Bandeau ---------- */
+.bandeau {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--bord);
+  background: var(--nuit-claire);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.pendule { font-family: var(--mono); font-size: 1.4rem; color: var(--ambre-vif); font-variant-numeric: tabular-nums; }
+.pendule.urgence { color: var(--sang); animation: battement 1s steps(2, end) infinite; }
+@keyframes battement { 50% { opacity: 0.45; } }
+.bandeau .lieu { color: var(--papier-terne); font-size: 0.9rem; }
+.bandeau .droite { margin-left: auto; display: flex; gap: 0.5rem; align-items: center; }
+
+/* ---------- Scène ---------- */
+.jeu { max-width: 78rem; margin: 0 auto; padding: 1rem; }
+.decor {
+  position: relative;
+  aspect-ratio: 3 / 2;
+  border: 1px solid var(--bord);
+  border-radius: 4px;
+  overflow: hidden;
+  background: #14100c;
+}
+.decor img.fond { width: 100%; height: 100%; object-fit: cover; display: block; }
+.zone {
+  position: absolute;
+  border: 1px dashed transparent;
+  border-radius: 4px;
+  background: transparent;
+  padding: 0;
+}
+.zone:hover, .zone:focus-visible {
+  border-color: var(--ambre);
+  background: rgb(217 157 63 / 12%);
+  outline: none;
+}
+.zone.vue { border-color: rgb(111 208 140 / 35%); }
+.zone .etiquette {
+  position: absolute;
+  left: 50%;
+  bottom: -1.6rem;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  font-size: 0.8rem;
+  color: var(--ambre-vif);
+  background: rgb(13 11 9 / 90%);
+  padding: 0.1rem 0.5rem;
+  border-radius: 3px;
+  opacity: 0;
+  pointer-events: none;
+}
+.zone:hover .etiquette, .zone:focus-visible .etiquette { opacity: 1; }
+
+/* Le décor de remplacement, tant que les vraies images ne sont pas là. */
+.fond-absent {
+  width: 100%; height: 100%;
+  display: grid; place-items: center;
+  background:
+    repeating-linear-gradient(45deg, #191410 0 12px, #16110d 12px 24px);
+  color: var(--papier-terne);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ---------- Colonnes ---------- */
+.colonnes { display: grid; grid-template-columns: 1fr; gap: 1rem; margin-top: 1rem; }
+@media (min-width: 62rem) { .colonnes { grid-template-columns: 2fr 1fr; } }
+
+.encart {
+  border: 1px solid var(--bord);
+  border-radius: 4px;
+  padding: 1rem;
+  background: var(--nuit-claire);
+}
+.encart h2 {
+  font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+  color: var(--papier-terne); margin: 0 0 0.8rem; font-weight: 400;
+}
+.recit { white-space: pre-wrap; }
+.recit em { color: var(--ambre); font-style: normal; }
+
+.inventaire { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.inventaire .objet {
+  border: 1px solid var(--bord); border-radius: 3px; padding: 0.35rem 0.6rem;
+  font-size: 0.85rem; color: var(--ambre); background: #12100d;
+}
+.vide { color: var(--papier-terne); font-style: italic; }
+
+.indice { border-left: 2px solid var(--ambre); padding-left: 0.8rem; margin: 0.8rem 0; color: var(--papier); }
+.cout { color: var(--papier-terne); font-size: 0.85rem; }
+
+/* ---------- Cadenas ---------- */
+.cadenas { display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap; }
+.cadenas input {
+  font-family: var(--mono); font-size: 1.5rem; letter-spacing: 0.6em;
+  width: 9rem; text-align: center; text-transform: uppercase;
+  background: #0a0908; color: var(--ambre-vif);
+  border: 1px solid var(--bord); border-radius: 3px; padding: 0.4rem;
+}
+.cadenas input:focus { outline: none; border-color: var(--ambre); }
+.refus { color: var(--sang); }
+
+/* ---------- Atelier de code ---------- */
+.voile {
+  position: fixed; inset: 0; z-index: 40;
+  background: rgb(5 4 3 / 92%);
+  display: grid; place-items: start center;
+  padding: 1rem; overflow: auto;
+}
+.atelier { width: min(64rem, 100%); border: 1px solid var(--bord); border-radius: 4px; background: var(--nuit-claire); }
+.atelier header { display: flex; align-items: baseline; gap: 1rem; padding: 1rem; border-bottom: 1px solid var(--bord); flex-wrap: wrap; }
+.atelier header h2 { margin: 0; font-size: 1.2rem; color: var(--ambre-vif); font-weight: 400; }
+.atelier header .notion { color: var(--papier-terne); font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; }
+.atelier header .fermer { margin-left: auto; }
+.atelier .corps { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 60rem) { .atelier .corps { grid-template-columns: 1fr 1fr; } }
+.consigne { padding: 1rem; border-right: 1px solid var(--bord); }
+.consigne code { font-family: var(--mono); color: var(--tube); font-size: 0.9em; }
+.consigne pre {
+  background: #0a0908; border: 1px solid var(--bord); border-radius: 3px;
+  padding: 0.6rem; overflow-x: auto; font-family: var(--mono); font-size: 0.85rem; color: var(--tube);
+}
+.invite {
+  font-family: var(--mono); color: var(--tube); background: #07120b;
+  border: 1px solid #1d3a28; border-radius: 3px; padding: 0.6rem 0.8rem; margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+.editeur { display: flex; flex-direction: column; }
+.editeur textarea {
+  font-family: var(--mono); font-size: 0.9rem; line-height: 1.5;
+  background: #0a0908; color: var(--papier); border: none; border-bottom: 1px solid var(--bord);
+  padding: 1rem; min-height: 22rem; resize: vertical; tab-size: 4;
+}
+.editeur textarea:focus { outline: none; }
+.barre { display: flex; gap: 0.6rem; align-items: center; padding: 0.7rem 1rem; flex-wrap: wrap; }
+.barre .etat { color: var(--papier-terne); font-size: 0.85rem; margin-left: auto; }
+.console {
+  font-family: var(--mono); font-size: 0.85rem; white-space: pre-wrap;
+  padding: 1rem; border-top: 1px solid var(--bord); background: #070605; max-height: 18rem; overflow: auto;
+}
+.console .erreur { color: #ef8b74; }
+.console .ok { color: var(--tube); }
+
+/* ---------- Terminal ---------- */
+.terminal {
+  font-family: var(--mono); font-size: 0.9rem; background: #050807; color: var(--tube);
+  padding: 1rem; min-height: 26rem; max-height: 60vh; overflow: auto; white-space: pre-wrap;
+  border-top: 1px solid var(--bord);
+}
+.terminal-saisie { display: flex; gap: 0.5rem; padding: 0.6rem 1rem; border-top: 1px solid var(--bord); }
+.terminal-saisie span { font-family: var(--mono); color: var(--tube); }
+.terminal-saisie input {
+  flex: 1; font-family: var(--mono); font-size: 0.9rem;
+  background: transparent; border: none; color: var(--tube);
+}
+.terminal-saisie input:focus { outline: none; }
+
+/* ---------- Chargement de la chaîne C ---------- */
+.chaine { display: flex; align-items: center; gap: 0.6rem; font-size: 0.8rem; color: var(--papier-terne); }
+.jauge { width: 6rem; height: 3px; background: var(--bord); border-radius: 2px; overflow: hidden; }
+.jauge i { display: block; height: 100%; background: var(--ambre); transition: width 300ms; }
+
+/* ---------- Fin ---------- */
+.fin { min-height: 100vh; display: grid; place-items: center; padding: 2rem 1rem; text-align: center; }
+.fin h1 { font-size: clamp(2rem, 7vw, 3.4rem); color: var(--ambre-vif); font-weight: 400; margin: 0 0 0.5em; }
+.fin .recit { text-align: left; max-width: 38rem; margin: 0 auto 2rem; }
+.fin .bilan { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.fin .bilan div { text-align: center; }
+.fin .bilan .valeur { font-family: var(--mono); font-size: 1.6rem; color: var(--ambre-vif); display: block; }
+.fin .bilan .quoi { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--papier-terne); }
