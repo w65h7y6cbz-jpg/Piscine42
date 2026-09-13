@@ -3,6 +3,7 @@ dist/
 .wrangler/
 *.local
 .env
+*.tsbuildinfo
 
 # La chaîne de compilation C fait 58 Mo : elle se récupère avec `npm run chaine-c`,
 # elle n'a rien à faire dans l'historique git.
