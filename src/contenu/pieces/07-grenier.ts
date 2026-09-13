@@ -7,7 +7,7 @@ export const grenier: Piece = {
   nom: 'Le Grenier',
   notion: 'Récursivité — une fonction qui s’appelle',
   minutes: 18,
-  fond: '/pieces/07-grenier/fond.webp',
+  fond: '/pieces/32-fond.webp',
   arrivee: `Sous les combles, la poussière tient dans l'air comme de la fumée. Une
 lucarne laisse entrer une lumière grise — l'aube n'est plus si loin.
 

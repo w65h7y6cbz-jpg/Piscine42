@@ -6,7 +6,7 @@ export const salleServeur: Piece = {
   nom: 'La Salle Serveur',
   notion: 'Unix — fichiers, droits, git',
   minutes: 20,
-  fond: '/pieces/08-salle-serveur/fond.webp',
+  fond: '/pieces/37-fond.webp',
   arrivee: `Il fait dix degrés de moins ici. Deux baies de machines beiges, des dizaines
 de diodes vertes et ambres, un climatiseur mobile dont le tuyau sort par une fenêtre
 condamnée.

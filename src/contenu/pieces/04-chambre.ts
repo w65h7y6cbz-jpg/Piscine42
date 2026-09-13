@@ -7,7 +7,7 @@ export const chambre: Piece = {
   nom: 'La Chambre',
   notion: 'Pointeurs — passer une adresse',
   minutes: 15,
-  fond: '/pieces/04-chambre/fond.webp',
+  fond: '/pieces/12-fond.webp',
   arrivee: `Un lit fait, une couverture à fleurs passées, une armoire à miroir
 entrouverte. Rien n'a bougé ici depuis longtemps, et pourtant il n'y a pas de poussière
 sur la commode.

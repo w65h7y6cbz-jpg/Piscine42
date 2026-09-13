@@ -17,7 +17,7 @@ const AUBE = `Le jour s'est levé sans moi.
 Les volets ne se sont pas relevés. L'écran du hall s'est éteint. La maison a cessé de
 poser des questions — c'est la pire réponse qu'elle pouvait me faire.`;
 
-export function Fin({ etat, surRecommencer }: { etat: Etat; surRecommencer: () => void }) {
+export function Fin({ etat, surRecommencer, surMenu }: { etat: Etat; surRecommencer: () => void; surMenu?: () => void }) {
   const evasion = etat.terminee === 'evasion';
   const duree = (etat.termineeA ?? Date.now()) - etat.commenceeA;
   const indices = Object.values(etat.indicesOuverts).reduce((total, n) => total + n, 0);
@@ -60,6 +60,7 @@ export function Fin({ etat, surRecommencer }: { etat: Etat; surRecommencer: () =
         </p>
 
         <button className="principal" onClick={surRecommencer}>Revenir devant la maison</button>
+        {surMenu && <button onClick={surMenu} style={{ marginTop: '0.5rem' }}>Retour aux modes</button>}
       </div>
     </div>
   );

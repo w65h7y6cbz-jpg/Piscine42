@@ -7,7 +7,7 @@ export const hall: Piece = {
   nom: 'Le Hall',
   notion: 'Premier programme — main, printf',
   minutes: 12,
-  fond: '/pieces/01-hall/fond.webp',
+  fond: '/pieces/01-villa-nuit.webp',
   arrivee: `Le volet roulant est descendu derrière toi pendant que tu regardais
 ailleurs. La porte d'entrée ne bouge plus. Il n'y a qu'une ampoule allumée dans tout
 le hall, et elle clignote.

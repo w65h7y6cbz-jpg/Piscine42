@@ -7,7 +7,7 @@ export const atelier: Piece = {
   nom: "L'Atelier",
   notion: 'Bases et binaire — poids des bits',
   minutes: 18,
-  fond: '/pieces/05-atelier/fond.webp',
+  fond: '/pieces/22-fond.webp',
   arrivee: `Le garage a été transformé en atelier d'électronique. Un établi sous une
 lampe à pince, un mur d'outils, une colonne de petits tiroirs métalliques numérotés de
 0000 à 9999 par groupes de quatre molettes.

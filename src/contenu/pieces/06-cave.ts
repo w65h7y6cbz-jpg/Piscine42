@@ -7,7 +7,7 @@ export const cave: Piece = {
   nom: 'La Cave',
   notion: 'Allocation dynamique — malloc et free',
   minutes: 18,
-  fond: '/pieces/06-cave/fond.webp',
+  fond: '/pieces/27-fond.webp',
   arrivee: `L'eau monte. Pas vite — un demi-centimètre depuis que je suis entré — mais
 elle monte, et la seule ampoule pend à trente centimètres de la surface.
 

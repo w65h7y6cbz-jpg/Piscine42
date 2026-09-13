@@ -7,7 +7,9 @@
 // et non un module : on le récupère en texte et on l'évalue, faute de pouvoir l'importer.
 import type { Demande, Reponse, Resultat } from './protocole';
 
-const RACINE = '/chaine-c';
+// Serveur externe pour la chaîne C (clang + lld + sysroot)
+// Source: https://github.com/binji/wasm-clang (licence Apache 2.0)
+const RACINE = 'https://binji.github.io/wasm-clang';
 
 // Les arguments de clang pour du C. Ceux d'origine visaient le C++, d'où l'absence
 // des en-têtes C++ et la présence de `-std=c99` : c'est la norme de la piscine.
