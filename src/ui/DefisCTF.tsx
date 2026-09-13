@@ -84,8 +84,8 @@ export function DefisCTF({ surTerminaison }: { surTerminaison: () => void }) {
           <p className="sous">Défis CTF — Victoire</p>
           <h1>La Villa Révélée</h1>
 
-          <div style={{ margin: '1.5rem 0', maxWidth: '100%', aspectRatio: '16/9' }}>
-            <Illustration src="/pieces/51-evasion.webp" alt="L'évasion finale" />
+          <div style={{ margin: '1.5rem 0', maxWidth: '100%' }}>
+            <Illustration className="illustration-titre" src="/pieces/51-evasion.webp" alt="L'évasion finale" />
           </div>
 
           <p style={{ whiteSpace: 'pre-wrap', marginBottom: '2rem' }}>
@@ -118,8 +118,8 @@ La Villa Nul n'était jamais une prison. C'était une école.`}
           <p className="sous">Défis CTF</p>
           <h1>Chasse aux secrets</h1>
 
-          <div style={{ margin: '1.5rem 0', maxWidth: '100%', aspectRatio: '16/9' }}>
-            <Illustration src="/pieces/01-villa-nuit.webp" alt="La villa, la nuit" />
+          <div style={{ margin: '1.5rem 0', maxWidth: '100%' }}>
+            <Illustration className="illustration-titre" src="/pieces/01-villa-nuit.webp" alt="La villa, la nuit" />
           </div>
 
           <p style={{ whiteSpace: 'pre-wrap', marginBottom: '2rem' }}>{PROLOGUE_CTF}</p>
