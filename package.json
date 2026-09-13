@@ -14,7 +14,8 @@
     "preview": "vite preview",
     "typecheck": "tsc -b --force",
     "test": "vitest run",
-    "deploy": "npm run build && wrangler deploy"
+    "build:deploy": "tsc -b && vite build",
+    "deploy": "npm run build:deploy && wrangler deploy"
   },
   "dependencies": {
     "react": "^18.3.1",
