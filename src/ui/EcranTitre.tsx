@@ -46,7 +46,7 @@ export function EcranTitre({ aUneSauvegarde, surDebut, surReprise, surRetour }: 
         <h1>La Villa Nul</h1>
 
         <div style={{ margin: '1.5rem 0' }}>
-          <Illustration src="/titre/villa-nuit.webp" alt="La villa, la nuit" />
+          <Illustration src="/pieces/01-villa-nuit.webp" alt="La villa, la nuit" />
         </div>
 
         <p style={{ whiteSpace: 'pre-wrap' }}>{PROLOGUE}</p>
