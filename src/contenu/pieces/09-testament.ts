@@ -7,7 +7,7 @@ export const testament: Piece = {
   nom: 'Le Testament',
   notion: 'La Norme — et tout le reste',
   minutes: 25,
-  fond: '/pieces/09-testament/fond.webp',
+  fond: '/pieces/42-fond.webp',
   arrivee: `Une pièce nue, sous la cave. Du plâtre brut, une ampoule qui oscille, rien
 au mur.
 

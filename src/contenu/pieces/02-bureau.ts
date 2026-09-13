@@ -7,7 +7,7 @@ export const bureau: Piece = {
   nom: 'Le Bureau',
   notion: 'Boucles et tri — while, tableaux',
   minutes: 15,
-  fond: '/pieces/02-bureau/fond.webp',
+  fond: '/pieces/02-fond.webp',
   arrivee: `Un bureau en désordre, une lampe à abat-jour vert encore allumée. Le
 Minitel sur le coin de la table ronronne doucement — il n'a pas été éteint depuis des
 années.

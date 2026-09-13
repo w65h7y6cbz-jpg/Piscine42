@@ -7,7 +7,7 @@ export const bibliotheque: Piece = {
   nom: 'La Bibliothèque',
   notion: 'Chaînes de caractères — le zéro terminal',
   minutes: 15,
-  fond: '/pieces/03-bibliotheque/fond.webp',
+  fond: '/pieces/06-fond.webp',
   arrivee: `Des rayonnages du sol au plafond, un fauteuil creusé par des années de
 lectures, un feu qui achève de mourir. L'air sent la colle et le vieux papier.
 
