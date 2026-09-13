@@ -17,10 +17,11 @@ Sur l'écran du hall, une ligne s'est affichée :
   « La maison s'ouvre à qui sait lui parler.
     Tu as jusqu'à l'aube. »`;
 
-export function EcranTitre({ aUneSauvegarde, surDebut, surReprise }: {
+export function EcranTitre({ aUneSauvegarde, surDebut, surReprise, surRetour }: {
   aUneSauvegarde: boolean;
   surDebut: () => void;
   surReprise: () => void;
+  surRetour?: () => void;
 }) {
   const [chaine, setChaine] = useState<Progression | null>({ etape: 'Réveil de la machine', part: 0 });
   const [prete, setPrete] = useState(false);
@@ -51,22 +52,23 @@ export function EcranTitre({ aUneSauvegarde, surDebut, surReprise }: {
         <p style={{ whiteSpace: 'pre-wrap' }}>{PROLOGUE}</p>
 
         <p className="cout" style={{ textAlign: 'center' }}>
-          Neuf pièces · {minutes} minutes de nuit · du vrai C, compilé ici même
+          Neuf pieces - {minutes} minutes de nuit - du vrai C, compile ici meme
         </p>
 
         <div className="titre-actions">
           <button className="principal" onClick={surDebut}>
             {aUneSauvegarde ? 'Recommencer depuis le hall' : 'Entrer'}
           </button>
-          {aUneSauvegarde && <button onClick={surReprise}>Reprendre où j’en étais</button>}
+          {aUneSauvegarde && <button onClick={surReprise}>Reprendre ou j en etais</button>}
+          {surRetour && <button onClick={surRetour} style={{ marginTop: '0.5rem' }}>Retour aux modes</button>}
         </div>
 
         <div className="chaine" style={{ justifyContent: 'center', marginTop: '1.5rem' }}>
           {prete ? (
-            <span>Le compilateur est prêt.</span>
+            <span>Le compilateur est pret.</span>
           ) : (
             <>
-              <span>{chaine?.etape ?? 'Réveil de la machine'}…</span>
+              <span>{chaine?.etape ?? 'Réveil de la machine'}...</span>
               <span className="jauge"><i style={{ width: `${(chaine?.part ?? 0) * 100}%` }} /></span>
             </>
           )}
